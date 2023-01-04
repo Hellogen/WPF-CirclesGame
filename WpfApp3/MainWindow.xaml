@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3" 
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" WindowStyle="None" ResizeMode="CanResize">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" />
+    </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionary1.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+
+        <TextBlock Background="Orange"></TextBlock>
+        <Canvas MouseDown="Canvas_MouseDown" Background="AliceBlue" x:Name="Canvas" Margin="10,50,10,35"/>
+
+        <StackPanel MouseDown="Canvas_MouseDown" Orientation="Horizontal" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Bottom" Panel.ZIndex="1" >
+            <Button Click="Button_Click" Content="&lt;&lt;"></Button>
+            <TextBlock x:Name="countCircles" TextAlignment="Center" MinWidth="50" Height="30"><Run Text="10"/></TextBlock>
+            <Button Click="Button_Click_1" Content=">>"></Button>
+            <TextBlock x:Name="Timer">Time:</TextBlock>
+        </StackPanel>
+        <TextBlock x:Name="UpOfWindow" MouseLeftButtonDown="UpOfWindow_MouseLeftButtonDown" Height="50" VerticalAlignment="Top" Background="Orange"></TextBlock>
+        <TextBlock x:Name="NameOfWindow" MouseLeftButtonDown="UpOfWindow_MouseLeftButtonDown"  Text="Window" VerticalAlignment="Top" FontSize="20" Margin="10,10,140,0"/>
+        <Button x:Name="Exit" Click="Exit_Click" VerticalAlignment="Top" Width="60" Height="30" HorizontalAlignment="Right" Margin="0,10,10,0" Style="{StaticResource doExit}">X</Button>
+        <Button x:Name="Close" Click="Close_Click" VerticalAlignment="Top" Width="60" Height="30" HorizontalAlignment="Right" Margin="0,10,80,0" Style="{StaticResource doMinimize }" FontSize="22">-</Button>
+    </Grid>
+</Window>
